@@ -88,14 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Check if either player has won
-    if (currentPlayer === "X" && hasWinningCombination(playerXPositions)) {
-      console.log("Player X wins with positions:", playerXPositions);
-      return true;
-    } else if (
-      currentPlayer === "O" &&
-      hasWinningCombination(playerOPositions)
+    if (
+      (currentPlayer === "X" && hasWinningCombination(playerXPositions)) ||
+      (currentPlayer === "O" && hasWinningCombination(playerOPositions))
     ) {
-      console.log("Player O wins with positions:", playerOPositions);
+      console.log(
+        `Player ${currentPlayer} wins with positions:`,
+        playerXPositions
+      );
       return true;
     }
 
